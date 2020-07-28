@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import data from './data.json'
+import ScheduleTimeLayout from './Components/Schedule/ScheduleTimeLayout'
+import ScheduleBlankLayout from './Components/Schedule/ScheduleBlankLayout'
+import './App.scss'
+import './Reset.scss'
 
-function App() {
-  return (
+export default function App() {
+  const [schedule, setData] = useState({
+    data
+  });
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="ScheduleBox">
+      <ScheduleTimeLayout 
+      times={schedule.data.times}/>
+      {schedule.data.data.map((data, index)=>(
+        <ScheduleBlankLayout 
+        times={schedule.data.times}
+        title={data.position}
+        color={data.color}/>
+      ))}
+      
+      </div>
     </div>
-  );
+  )
 }
-
-export default App;

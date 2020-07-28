@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$soft: white;
+$border: #05668d;
+$Slot: 20px;
+$SlotWithBorder: $Slot - 1px;
+$BlankWidth: 150px;
+$Boxwidth: 450px + 100px + 4px;
+.App {
+  font-family: 'Roboto', sans-serif;
+}
+.ScheduleBox{
+  display: flex;
+  justify-content: flex-start;
+  padding:0px;
+  margin:0px;
+  border: solid 15px $border;
+  width:$Boxwidth;
+}
+.TitleBar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  max-width: 100px;
+  border-right: solid 1px;
+}
+.TitleBar2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  max-width: 150px;
+  border-right: 1px solid;
+}
+.TimeTitle{
+  font-size: 1rem;
+  min-height: $SlotWithBorder;
+  max-height: $SlotWithBorder;
+  border-top: solid 1px black;
+  border-right: solid 1px black;
+  width: 100px;
+  background-color: $soft;
+  // overflow: hidden;
+  p{
+    font-size: 15px;
+    margin: 0px;
+    padding: 2px
+  }
+}
+.TimeTitle2{
+  font-size: 1rem;
+  min-height: $SlotWithBorder;
+  max-height: $SlotWithBorder;
+  border-top: solid 1px black;
+  border-right: solid 1px black;
+  width: $BlankWidth;
+  background-color: $soft;
+  // overflow: hidden;
+  p{
+    font-size: 15px;
+    margin: 0px;
+    padding: 2px
+  }
+}
+.TimeEmpty{
+  min-width: 30px;
+  width: 100px;
+  min-height: $SlotWithBorder;
+  border-top: 1px solid rgba(0, 0, 0, 0.089);
+  border-right: 1px solid black;
+}
+.TimeEmpty2{
+  min-width: 30px;
+  width: 150px;
+  min-height: $SlotWithBorder;
+  border-top: 1px solid rgba(0, 0, 0, 0.089);
+  border-right: 1px solid black;
+}
