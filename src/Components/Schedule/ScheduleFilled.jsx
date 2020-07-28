@@ -8,16 +8,16 @@ export default function ScheduleFilled({ available, color }) {
         <div className="Available">
             {available.map((time, index) => {
                 return (
-                    <div style={{
+                    <div class="Bubble" style={{
                         position: "absolute",
-                        width: "150px",
-                        height: `${(time.end - time.start) * 20}px`,
-                        width: "150px",
-                        backgroundColor: `${color}98`,
+                        height: `${(time.end - time.start) * 20 -8}px`,
+                        width: "144px",
+                        backgroundColor: `${color}78`,
                         margin: "0px",
                         padding: "0px",
                         borderRadius:"10px",
-                        top: `${(50+15+40+(time.start*20))}px`
+                        border: `3px solid ${color}`,
+                        top: `${(1+15+25+15+40+(time.start*20))}px`
                         
                     }}>
                         <p id="Available">Available</p>

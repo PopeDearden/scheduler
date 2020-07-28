@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import data from '../../data.json'
 import '../../App.scss'
 
 export default function ScheduleLayout({times}) {

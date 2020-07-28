@@ -1,16 +1,22 @@
 {
-    "data": [
+    "events": [
         {
             "position": "Doctor",
             "color":"#56cfe1",
             "availability": [
                 {
-                    "start": "0",
-                    "end": "2"
-                },
-                {
-                    "start": "2",
+                    "start": "10",
                     "end": "18"
+                }
+            ]
+        }, 
+        {
+            "position": "Assistant",
+            "color":"#72efdd",
+            "availability": [
+                {
+                    "start": "8",
+                    "end": "32"
                 }
             ]
         },
@@ -25,16 +31,6 @@
                 {
                     "start": "15",
                     "end": "25"
-                }
-            ]
-        },
-        {
-            "position": "Assistant",
-            "color":"#72efdd",
-            "availability": [
-                {
-                    "start": "8",
-                    "end": "32"
                 }
             ]
         }
