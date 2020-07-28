@@ -4,34 +4,21 @@
             "position": "Doctor",
             "color":"#56cfe1",
             "availability": [
-                {
-                    "start": "10",
-                    "end": "18"
-                }
+         
             ]
         }, 
         {
             "position": "Assistant",
             "color":"#72efdd",
             "availability": [
-                {
-                    "start": "8",
-                    "end": "32"
-                }
+         
             ]
         },
         {
             "position": "Hygienist",
             "color":"#64dfdf",
             "availability": [
-                {
-                    "start": "5",
-                    "end": "10"
-                },
-                {
-                    "start": "15",
-                    "end": "25"
-                }
+               
             ]
         }
     ],

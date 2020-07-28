@@ -11,6 +11,8 @@ import './Reset.scss'
 export default function App() {
   const [schedule, setData] = useState({
     events: data.events,
+  });
+  const [time, setTime] = useState({
     times: data.times
   });
   const [modal, setModal] = useState({
@@ -30,11 +32,11 @@ export default function App() {
         <div className="Chart">
           <div className="ScheduleBox">
             <ScheduleTimeLayout
-              times={schedule.times} />
+              times={time.times} />
             {schedule.events.map((data, index) => (
               <div className="Role">
                 <ScheduleBlankLayout
-                  times={schedule.times}
+                  times={time.times}
                   title={data.position}
                   color={data.color} />
                 <ScheduleFilled
@@ -48,7 +50,7 @@ export default function App() {
             display={modal.display}
             setData={setData} 
             events={schedule.events}
-            times={schedule.times}/>
+            times={time.times}/>
         </div>
       </div>
     </div>
