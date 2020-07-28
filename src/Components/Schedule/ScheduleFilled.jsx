@@ -9,15 +9,18 @@ export default function ScheduleFilled({ available, color }) {
             {available.map((time, index) => {
                 return (
                     <div style={{
-                        position: "relative",
+                        position: "absolute",
                         width: "150px",
                         height: `${(time.end - time.start) * 20}px`,
                         width: "150px",
-                        backgroundColor: `${color}95`,
+                        backgroundColor: `${color}98`,
                         margin: "0px",
                         padding: "0px",
-                        bottom: `${(34 - time.start)*20-40}px`
+                        borderRadius:"10px",
+                        top: `${(50+15+40+(time.start*20))}px`
+                        
                     }}>
+                        <p id="Available">Available</p>
                     </div>
                 )
             })}
