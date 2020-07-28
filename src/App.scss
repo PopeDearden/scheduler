@@ -8,19 +8,27 @@ $Boxwidth: 450px + 100px + 4px;
 .App {
   font-family: 'Roboto', sans-serif;
 }
+
+.Available{
+  margin: 0px;
+  padding:0px;
+}
 .ScheduleBox{
   display: flex;
   justify-content: flex-start;
   padding:0px;
   margin:0px;
   border: solid 15px $border;
+  border-radius: 10px;
+  margin: 50px;
   width:$Boxwidth;
+  max-height:680px;
 }
 .TitleBar{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 30px;
+  min-height: $Slot + $Slot;
   max-width: 100px;
   border-right: solid 1px;
 }
@@ -28,7 +36,7 @@ $Boxwidth: 450px + 100px + 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 30px;
+  min-height: $Slot + $Slot;
   max-width: 150px;
   border-right: 1px solid;
 }
