@@ -16,7 +16,7 @@ export default function App() {
     times: data.times
   });
   const [modal, setModal] = useState({
-    display: true
+    display: false
   })
   return (
     <div className="App">
