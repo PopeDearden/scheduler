@@ -40,9 +40,12 @@ export default function App() {
                   title={data.position}
                   color={data.color} />
                 <ScheduleFilled
+                events={schedule.events}
                   available={data.availability}
+                  title={data.position}
                   color={data.color}
                   times={time.times}
+                  setData={setData}
                 />
               </div>
             ))}
@@ -51,7 +54,9 @@ export default function App() {
             display={modal.display}
             setData={setData} 
             events={schedule.events}
-            times={time.times}/>
+            times={time.times}
+            setModal={setModal}/>
+            
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../../App.scss'
-export default function Modal({ display, setData, events, times }) {
+export default function Modal({ display, setData, events, times, setModal }) {
     const [formPosition, setPosition] = useState({
         position: null,
     })
@@ -11,7 +11,7 @@ export default function Modal({ display, setData, events, times }) {
         end: null,
     })
 
-    function addEvent(position, start, end) {
+    async function addEvent(position, start, end) {
         if (position === null | start === null | end === null) {
             alert('Darn! You must fill out all of the form')
             return
@@ -27,28 +27,38 @@ export default function Modal({ display, setData, events, times }) {
             let newEvents = [...events[position].availability, { start: start, end: end }]
             let copiedEvents = events
             copiedEvents[position].availability = newEvents
-            setData({ events: copiedEvents })
+            await setData({ events: copiedEvents })
+            await setPosition({
+                position: null
+            })
+            await setStart({
+                start: null
+            })
+            await setEnd({
+                end: null
+            })
+            setModal({display: false})
         }
     }
     let reveal = (<div className="Modal">
         <div className="Form">
             <h1>Add Availability</h1>
             <h2>Position</h2>
-            <select value={formPosition.position} onChange={e => setPosition({ position: e.target.value })}>
-                <option value={null}>Select Position</option>
+            <select value={null} onChange={e => setPosition({ position: e.target.value })}>
+                <option value={formPosition.position}>Select Position</option>
                 {events.map((position, index) => (
                     <option value={index}>{position.position}</option>
                 ))}
             </select>
             <h2>Start Time</h2>
-            <select value={formStart.start} onChange={e => setStart({ start: e.target.value })}>
+            <select value={null} onChange={e => setStart({ start: e.target.value })}>
                 <option value={null}>Select Start Time</option>
                 {times.map((time, index) => (
                     <option value={index}>{time}</option>
                 ))}
             </select>
             <h2>End Time</h2>
-            <select value={formEnd.end} onChange={e => setEnd({ end: e.target.value })}>
+            <select value={null} onChange={e => setEnd({ end: e.target.value })}>
                 <option value={null}>Select End Time</option>
                 {times.map((time, index) => (
                     <option value={index}>{time}</option>
