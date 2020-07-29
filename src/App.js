@@ -29,6 +29,7 @@ export default function App() {
         </div>
       </div>
       <div className="BodyArea">
+      <p id="info">*To delete times, double click on the time block.</p>
         <div className="Chart">
           <div className="ScheduleBox">
             <ScheduleTimeLayout

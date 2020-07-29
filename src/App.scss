@@ -95,7 +95,7 @@ p{
   transform: scale(1.05);
 }
 .Bubble {
-  transition: .15s;
+  transition: transform .15s;
 }
 .Bubble:hover{
   transform: scale(1.01);
@@ -120,6 +120,13 @@ p{
   background-color: $border;
   font-size: 1.5rem;
   color: white;
+}
+#info{
+  margin-left: 25px;
+  margin-top: 12.5px;
+  margin-bottom: -12.5px;
+  color: $border;
+  font-weight: 500;
 }
 .Chart{
   position: relative;
