@@ -4,11 +4,15 @@ import '../../App.scss'
 
 export default function ScheduleFilled({ available, color, times  }) {
 
-// function convertTime(start, end){
-//   let newStart = time.findIndex(stuff => stuff === start)
-// //   let newEnd = time.findIndex(stuff => stuff === end)
-//   return newStart
-// }
+function fixTime(fix) {
+    if(+fix === 32){
+        return "5:00 PM"
+    }
+    else{
+        return times[fix]
+    }
+}
+
     return (
         <div className="Available">
             {available.map((time, index) => {
@@ -26,7 +30,7 @@ export default function ScheduleFilled({ available, color, times  }) {
                         
                     }}>
                         <p id="Available">Available</p>
-                        <p id="Available">{times[time.start]}-{times[time.end]}</p>
+                        <p id="Available">{times[time.start]}-{fixTime(time.end)}</p>
                     </div>
                 )
             })}
