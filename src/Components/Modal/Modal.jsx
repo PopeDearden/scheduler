@@ -12,18 +12,26 @@ export default function Modal({ display, setData, events, times, setModal }) {
     })
 
     async function addEvent(position, start, end) {
+
         if (position === null | start === null | end === null) {
             alert('Darn! You must fill out all of the form')
             return
         }
-        if(+start === +end){
+        if (+start === +end) {
             alert('Oops! Your Start and end times cannot be the same!')
             return
         }
-        if(+start > +end){
+        if (+start > +end) {
             alert('Oops! Your start time cannot be after your end time!')
             return
-        }else{
+        }
+        let testOverlapp1 = events[position].availability.findIndex(frame => (+start >= +frame.start && +start < +frame.end))
+        let testOverlapp2 = events[position].availability.findIndex(frame => (+end > +frame.start && +end < +frame.end))
+        if (testOverlapp1 != -1 || testOverlapp2 != -1) {
+            alert('Oops! You have overlapping times!'
+            )
+            return
+        } else {
             let newEvents = [...events[position].availability, { start: start, end: end }]
             let copiedEvents = events
             copiedEvents[position].availability = newEvents
@@ -37,7 +45,7 @@ export default function Modal({ display, setData, events, times, setModal }) {
             await setEnd({
                 end: null
             })
-            setModal({display: false})
+            setModal({ display: false })
         }
     }
     let reveal = (<div className="Modal">
