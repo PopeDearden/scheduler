@@ -30,7 +30,7 @@ function fixTime(fix) {
                         
                     }}>
                         <p id="Available">Available</p>
-                        <p id="Available">{times[time.start]}-{fixTime(time.end)}</p>
+                        <p id="Available">{times[time.start]} - {fixTime(time.end)}</p>
                     </div>
                 )
             })}
