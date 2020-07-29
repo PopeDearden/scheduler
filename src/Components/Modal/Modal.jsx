@@ -16,10 +16,10 @@ export default function Modal({ display, setData, events, times }) {
             alert('You must fill out all of the form')
             return
         }
-        if(start > end){
-            alert('Your start time cannot be after your end time!')
-            return
-        }
+        // if(start > end){
+        //     alert('Your start time cannot be after your end time!')
+        //     return
+        // }
         let newEvents = [...events[position].availability, { start: start, end: end }]
         let copiedEvents = events
         copiedEvents[position].availability = newEvents
