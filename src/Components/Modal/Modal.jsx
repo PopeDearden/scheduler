@@ -27,7 +27,7 @@ export default function Modal({ display, setData, events, times, setModal }) {
         }
         let testOverlapp1 = events[position].availability.findIndex(frame => (+start >= +frame.start && +start < +frame.end))
         let testOverlapp2 = events[position].availability.findIndex(frame => (+end > +frame.start && +end < +frame.end))
-        let testOverlapp3 = events[position].availability.findIndex(frame => (+start <= +frame.start && + end > frame.end))
+        let testOverlapp3 = events[position].availability.findIndex(frame => (+start <= +frame.start && + end >= frame.end))
         if (testOverlapp1 !== -1 || testOverlapp2 !== -1 || testOverlapp3 !== -1) {
             alert('Oops! You have overlapping times!'
             )
