@@ -1,2 +1,2 @@
-*This project is hosted at:*
+#This project is hosted at
 taylorscheduler.netlify.app
