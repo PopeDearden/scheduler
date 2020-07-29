@@ -42,6 +42,7 @@ export default function App() {
                 <ScheduleFilled
                   available={data.availability}
                   color={data.color}
+                  times={time.times}
                 />
               </div>
             ))}

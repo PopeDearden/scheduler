@@ -2,8 +2,13 @@ import React, { useState } from 'react'
 import data from '../../data.json'
 import '../../App.scss'
 
-export default function ScheduleFilled({ available, color }) {
+export default function ScheduleFilled({ available, color, times  }) {
 
+// function convertTime(start, end){
+//   let newStart = time.findIndex(stuff => stuff === start)
+// //   let newEnd = time.findIndex(stuff => stuff === end)
+//   return newStart
+// }
     return (
         <div className="Available">
             {available.map((time, index) => {
@@ -21,6 +26,7 @@ export default function ScheduleFilled({ available, color }) {
                         
                     }}>
                         <p id="Available">Available</p>
+                        <p id="Available">{times[time.start]}-{times[time.end]}</p>
                     </div>
                 )
             })}

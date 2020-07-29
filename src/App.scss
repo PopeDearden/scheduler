@@ -55,7 +55,6 @@ $Boxwidth: 450px + 100px + 4px;
     border: solid 5px $border;
     color: $border;
     font-size: 1.5rem;
-    transition: .15s ease-in;
     border-radius: 10px;
     margin-top:10px;
     width: 200px;
@@ -65,10 +64,16 @@ $Boxwidth: 450px + 100px + 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .15s ease-in;
     p{
       margin: 8px;
       font-weight: 500;
     } 
+}
+.ModalButton:hover{
+  transform: scale(1.01);
+  background-color: $border;
+  color: white;
 }
 .Button{
 background-color: Transparent;
@@ -122,7 +127,9 @@ p{
   flex-direction: row;
 }
 #Available{
-  padding-left: 5px;
+  font-size: .95rem;
+  line-height: 1.1;
+  padding-left: 2px;
 }
 .ScheduleBox{
   display: flex;
