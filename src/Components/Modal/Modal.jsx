@@ -2,18 +2,18 @@ import React, { useState } from 'react'
 import '../../App.scss'
 export default function Modal({ display, setData, events, times, setModal }) {
     const [formPosition, setPosition] = useState({
-        position: null,
+        position: undefined,
     })
     const [formStart, setStart] = useState({
-        start: null,
+        start: undefined,
     })
     const [formEnd, setEnd] = useState({
-        end: null,
+        end: undefined,
     })
 
     async function addEvent(position, start, end) {
 
-        if (position === null | start === null | end === null) {
+        if (position === undefined | start === undefined | end === undefined) {
             alert('Darn! You must fill out all of the form')
             return
         }
@@ -27,7 +27,7 @@ export default function Modal({ display, setData, events, times, setModal }) {
         }
         let testOverlapp1 = events[position].availability.findIndex(frame => (+start >= +frame.start && +start < +frame.end))
         let testOverlapp2 = events[position].availability.findIndex(frame => (+end > +frame.start && +end < +frame.end))
-        if (testOverlapp1 != -1 || testOverlapp2 != -1) {
+        if (testOverlapp1 !== -1 || testOverlapp2 !== -1) {
             alert('Oops! You have overlapping times!'
             )
             return
@@ -37,13 +37,13 @@ export default function Modal({ display, setData, events, times, setModal }) {
             copiedEvents[position].availability = newEvents
             await setData({ events: copiedEvents })
             await setPosition({
-                position: null
+                position: undefined
             })
             await setStart({
-                start: null
+                start: undefined
             })
             await setEnd({
-                end: null
+                end: undefined
             })
             setModal({ display: false })
         }
@@ -52,24 +52,24 @@ export default function Modal({ display, setData, events, times, setModal }) {
         <div className="Form">
             <h1>Add Availability</h1>
             <h2>Position</h2>
-            <select value={null} onChange={e => setPosition({ position: e.target.value })}>
+            <select value={undefined} onChange={e => setPosition({ position: e.target.value })}>
                 <option value={formPosition.position}>Select Position</option>
                 {events.map((position, index) => (
-                    <option value={index}>{position.position}</option>
+                    <option key={index} value={index}>{position.position}</option>
                 ))}
             </select>
             <h2>Start Time</h2>
-            <select value={null} onChange={e => setStart({ start: e.target.value })}>
-                <option value={null}>Select Start Time</option>
+            <select value={undefined} onChange={e => setStart({ start: e.target.value })}>
+                <option value={undefined}>Select Start Time</option>
                 {times.map((time, index) => (
-                    <option value={index}>{time}</option>
+                    <option key={index} value={index}>{time}</option>
                 ))}
             </select>
             <h2>End Time</h2>
-            <select value={null} onChange={e => setEnd({ end: e.target.value })}>
-                <option value={null}>Select End Time</option>
+            <select value={undefined} onChange={e => setEnd({ end: e.target.value })}>
+                <option value={undefined}>Select End Time</option>
                 {times.map((time, index) => (
-                    <option value={index}>{time}</option>
+                    <option key={index} value={index}>{time}</option>
                 ))}
                 <option value={32}>5:00 PM</option>
             </select>

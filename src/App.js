@@ -12,7 +12,7 @@ export default function App() {
   const [schedule, setData] = useState({
     events: data.events,
   });
-  const [time, setTime] = useState({
+  const [time] = useState({
     times: data.times
   });
   const [modal, setModal] = useState({
@@ -35,7 +35,7 @@ export default function App() {
             <ScheduleTimeLayout
               times={time.times} />
             {schedule.events.map((data, index) => (
-              <div className="Role">
+              <div key={index} className="Role">
                 <ScheduleBlankLayout
                   times={time.times}
                   title={data.position}

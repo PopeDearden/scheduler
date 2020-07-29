@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import data from '../../data.json'
+import React from 'react'
+
 import '../../App.scss'
 
 export default function ScheduleFilled({ available, color, times, title, setData, events }) {
@@ -24,7 +24,7 @@ export default function ScheduleFilled({ available, color, times, title, setData
         }
         let copiedEvents = events
         let removeEvent = events[position].availability.filter(frame =>
-            frame.start != start && frame.end != end)
+            frame.start !== start && frame.end !== end)
         copiedEvents[position].availability = removeEvent
         await setData({
             events: copiedEvents
@@ -37,7 +37,7 @@ export default function ScheduleFilled({ available, color, times, title, setData
         <div className="Available">
             {available.map((time, index) => {
                 return (
-                    <div onDoubleClick={() => deleteEvent(title, time.start, time.end)} class="Bubble" style={{
+                    <div key={index} onDoubleClick={() => deleteEvent(title, time.start, time.end)} className="Bubble" style={{
                         position: "absolute",
                         height: `${(time.end - time.start) * 20 - 8}px`,
                         width: "144px",

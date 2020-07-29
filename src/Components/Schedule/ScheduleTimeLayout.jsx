@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../../App.scss'
 
 export default function ScheduleLayout({times}) {
@@ -11,14 +11,14 @@ export default function ScheduleLayout({times}) {
      {times.map((time, index) =>{
          if(index % 4 === 0){
              return(
-                <div className="TimeTitle">
+                <div key={index} className="TimeTitle">
                     <p>{time}</p>
                     </div>
              )
          }
          else{
              return(
-                 <div className="TimeEmpty">
+                 <div key={index} className="TimeEmpty">
                      </div>
              )
          }
